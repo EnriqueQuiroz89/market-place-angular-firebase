@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Interface } from 'readline';
+import { Product } from './product.model';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,11 @@ import { Interface } from 'readline';
 export class AppComponent {
   title = 'web-store';
 
-//array que usatra ngFor
+//ngFor para representarlo
 items = ['nicolas', 'javier', 'leonel']
 
-products  = [
+//ngFor tambien
+products : Product[] = [
   {
     id: '1',
     image: 'assets/images/camiseta.png',
@@ -56,7 +58,6 @@ products  = [
     description: 'tro sticker'
   },
 ];
-
 
 //funcion al hacer click en  agregar Item
 agregarItem(){
