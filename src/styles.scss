@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+//Be responsive
+//Tecnica: Movil First
+//Explain: Esta config si pantalla minima es de 576 
+
+
+@media (min-width: 576px){
+    .product-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+//Los cambio sya se hicieron ela brench 8

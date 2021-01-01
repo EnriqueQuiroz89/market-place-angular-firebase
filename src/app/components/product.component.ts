@@ -14,7 +14,11 @@ import {
 import { Product } from './../product.model';
 
 /**Ever last class */
-@Component({ selector: 'app-product', templateUrl: './product.component.html' })
+@Component({
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.scss'],
+})
 export class ProductComponent implements DoCheck, OnInit, OnDestroy {
   /**Mediante Input le ingreso el objeto
    * que recibi en app.component.html*/
