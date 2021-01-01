@@ -12,36 +12,14 @@ y si el valor cambia en el tiempo yo tambien cambio-->
 
 <!--Si true muestra el componente, aqui lo que es dinamico es la condicion-->
 <div *ngIf ="title==='henrydev'">
-    Esto es un div
-</div>
-
-<div >
-    <button (click)=  "agregarItem()">Agregar item</button>
+    Has descubierto este miembro
 </div>
 
 
+<div *ngFor= "let product of products">
+<!--[] para modificar elemento html-->
+{{product.title}}      
+<img [src]="product.image" alt="">
+     {{product.price}}
 
-
-<ul> <!--itera  un array declarado en componente-->
-    <li *ngFor="let item of items" >
-            {{item}}
-    </li>
-</ul>
-
-
-<ul> <!--Devuelve el indice de la iteracion-->
-     <li *ngFor="let item of items; index as i" >
-            {{item}}   {{i}}  <!--String Interpolation -->
-
-              <!--Usa index iteracion para pasar parametro a eliminarItem-->
-            <button (click)="eliminarItem(i)">Eliminar elemento</button>
-
-    </li>
-</ul>
-
-<!-- Si lista se vacia entonces muestra el mensaje -->
-<div *ngIf="items.length===0">La lista esta vacia</div>
-
-    
-    
-    
+</div>
