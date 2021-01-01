@@ -14,6 +14,7 @@ export class AppComponent {
 items = ['nicolas', 'javier', 'leonel']
 
 //ngFor tambien
+        /**Creamos una interfaza para poder tipar los objetos de products[]*/
 products : Product[] = [
   {
     id: '1',
