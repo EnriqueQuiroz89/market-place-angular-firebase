@@ -15,6 +15,15 @@ y si el valor cambia en el tiempo yo tambien cambio-->
     Has descubierto este miembro
 </div>
 
+<!--Condicional mas optimo  que el if-->
+<div [ngSwitch] ="title"> 
+    <p *ngSwitchCase= "'nicolas'">Esto es nicolas</p>
+    <p *ngSwitchCase= "'julian'">Esto es julian</p>
+    <p *ngSwitchCase= "'pedro'">Esto es  pedro</p>
+    <p *ngSwitchDefault>No hay match</p>
+</div>
+
+
 
 <div *ngFor= "let product of products">
 <!--[] para modificar elemento html-->
