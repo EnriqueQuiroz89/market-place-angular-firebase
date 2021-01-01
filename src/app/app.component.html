@@ -1,8 +1,6 @@
 
 <html lang="es">
 
-
-<app-product></app-product>
 <!-- Me suscriboo al valor de title en el componente 
 y si el valor cambia en el tiempo yo tambien cambio-->
 <div>¿Que pasa si escribo hendrydev? {{title}} </div>
@@ -25,13 +23,12 @@ y si el valor cambia en el tiempo yo tambien cambio-->
     <p *ngSwitchDefault>No hay match</p>
 </div>
 
-
-
+<!--ngFor itera un arreglo y en cada ciclo retorna un objeto Producto-->>
 <div *ngFor= "let product of products">
-<!--[] para modificar elemento html-->
-{{product.title}}      
-<img [src]="product.image" alt="">
-     
+<!--Mediante [ ] se captura el objeto Producto y se envia al componente -->
+                        <!--Ver producto.componet.ts para ver como lo procesa-->
+<app-product [product] = "product"></app-product>
+
 </div>
 
 

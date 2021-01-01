@@ -1,4 +1,9 @@
-<div>  {{ producto.title }}  
-    <strong>{{producto.price}}</strong>
-  <img [src]="producto.image" alt="" />
+  
+  <!--Seccion de ENTRADA de datos-->
+  <div>{{ product.title }}        
+    <strong>{{product.price}}</strong>
+  <img [src]="product.image" alt="" width="100" height="100" />
+<!--Seccion de SALIDA de datos-->
+<button (click)="addCart()"> Añadir al carrito</button>
+
 </div>
