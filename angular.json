@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "web-store"
+  "defaultProject": "web-store",
+  "cli": {
+    "analytics": false
+  }
 }
