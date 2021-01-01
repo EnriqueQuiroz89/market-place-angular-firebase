@@ -1,6 +1,16 @@
 
+<html lang="es">
 
-<input  [(ngModel)]="title"> {{title}}
+<!-- Me suscriboo al valor de title en el componente 
+y si el valor cambia en el tiempo yo tambien cambio-->
+<div>¿Que pasa si escribo hendrydev? {{title}} </div>
 
 
-<p>POr que funciona esto???</p>
+<!--Lee lo esrito en el box y lo envia al template-->
+<input type= "text"  [(ngModel)]="title" >
+
+
+<!--Si true muestra el componente, aqui lo que es dinamico es la condicion-->
+<div *ngIf ="title==='henrydev'">
+    Esto es un div
+</div>
