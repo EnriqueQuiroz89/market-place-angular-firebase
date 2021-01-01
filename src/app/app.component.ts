@@ -70,5 +70,11 @@ eliminarItem(index: number){
   this.items.splice(index, 1);
 }
 
+
+clickProduct(product: Product){
+  console.log('product' + product.title);
+  console.log('id' + product.id );
+}
+
 }
 
