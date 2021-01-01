@@ -1,0 +1,26 @@
+<!-- Me suscriboo al valor de title en el componente 
+y si el valor cambia en el tiempo yo tambien cambio-->
+<div  >¿Que pasa si escribo ...? {{title}}  </div>
+
+<div *ngFor="let persona of personas">  
+  <ul>
+<li>{{persona.nombre}}</li>
+  </ul>
+  
+  </div>
+
+<!--Lee lo esrito en el box y lo envia al componente a la var title-->
+<input type= "text"  [(ngModel)]="title" >
+
+
+<div [ngSwitch]="title">
+<div *ngFor="let persona of personas">  
+<p *ngSwitchCase="persona.nombre">
+
+<img [src]="persona.imagen">
+
+</p>
+  </div>
+
+
+</div>
