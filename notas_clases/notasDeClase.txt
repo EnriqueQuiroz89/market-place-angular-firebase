@@ -15,12 +15,6 @@ y si el valor cambia en el tiempo yo tambien cambio-->
     Esto es un div
 </div>
 
-<div >
-    <button (click)=  "agregarItem()">Agregar item</button>
-</div>
-
-
-
 
 <ul> <!--itera  un array declarado en componente-->
     <li *ngFor="let item of items" >
@@ -28,20 +22,24 @@ y si el valor cambia en el tiempo yo tambien cambio-->
     </li>
 </ul>
 
-
 <ul> <!--Devuelve el indice de la iteracion-->
-     <li *ngFor="let item of items; index as i" >
+    <li *ngFor="let item of items; index as i" >
             {{item}}   {{i}}  <!--String Interpolation -->
-
-              <!--Usa index iteracion para pasar parametro a eliminarItem-->
-            <button (click)="eliminarItem(i)">Eliminar elemento</button>
-
     </li>
 </ul>
 
-<!-- Si lista se vacia entonces muestra el mensaje -->
-<div *ngIf="items.length===0">La lista esta vacia</div>
 
+<!--Combinacion de *ngIf con *ngFor-->
+<div *ngIf = "title==='lista'">
+
+    <ul> 
+        <li *ngFor="let item of items" >
+                {{item}}
+        </li>
+    </ul>
+
+
+</div>
     
     
     
