@@ -1,9 +1,9 @@
-  
-  <!--Seccion de ENTRADA de datos-->
-  <div>{{ product.title }}        
-    <strong>{{product.price}}</strong>
-  <img [src]="product.image" alt=""  />
-<!--Seccion de SALIDA de datos ! Enviamos datos -->
-<button (click)="addCart()"> Añadir al carrito</button>
+<!--Seccion de ENTRADA de datos-->
+<h3>{{ product.title | uppercase }}</h3>
+<strong>{{ product.price | currency }}</strong>
+<img [src]="product.image" alt="" />
 
-</div>
+<p>{{ product.description | slice:0:8 }}</p>
+<p>La hora es: {{today | date:'HH:MM' }} </p>
+<!--Seccion de SALIDA de datos ! Enviamos datos -->
+<button (click)="addCart()">Añadir al carrito</button>

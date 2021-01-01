@@ -3,8 +3,12 @@
 y si el valor cambia en el tiempo yo tambien cambio-->
   <div>¿Que pasa si escribo hendrydev? {{ title }}</div>
 
-  <!--Lee lo esrito en el box y lo envia al template-->
+  <!--Lee lo esrito en el box y lo envia al componente-->
   <input type="text" [(ngModel)]="title" />
+
+  <!--Lee lo esrito en el box y lo envia al componente-->
+  <input type="text" [(ngModel)]="power" /> <!--Es buscado en component-->
+  {{power | exponential}}
 
   <!--Si true muestra el componente, aqui lo que es dinamico es la condicion-->
   <div *ngIf="title === 'henrydev'">Has descubierto este miembro</div>
