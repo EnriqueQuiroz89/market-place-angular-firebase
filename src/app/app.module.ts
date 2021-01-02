@@ -13,19 +13,12 @@ import { DemoComponent } from './demo/demo.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
-import {
-  SwiperModule,
-  SWIPER_CONFIG,
-  SwiperConfigInterface,
-} from 'ngx-swiper-wrapper';
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 
-const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
-  direction: 'horizontal',
-  slidesPerView: 'auto'
-};
+
 
 @NgModule({
   declarations: [
@@ -42,11 +35,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ProductDetailComponent,
     LayoutComponent,
   ],
-  imports: [FormsModule, BrowserModule, AppRoutingModule, SwiperModule],
-  providers: [{
-    provide: SWIPER_CONFIG,
-    useValue: DEFAULT_SWIPER_CONFIG
-  }],
+  imports: [FormsModule, BrowserModule, AppRoutingModule],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
