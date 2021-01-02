@@ -20,6 +20,7 @@ import {
   SWIPER_CONFIG,
   SwiperConfigInterface,
 } from 'ngx-swiper-wrapper';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -39,6 +40,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HeaderComponent,
     FooterComponent,
     BannerComponent,
+    PageNotFoundComponent,
   ],
   imports: [FormsModule, BrowserModule, AppRoutingModule, SwiperModule],
   providers: [{
