@@ -22,7 +22,7 @@ import { Product } from './../product.model';
 export class ProductComponent implements DoCheck, OnInit, OnDestroy {
   // Mediante Input le ingreso el objeto
   // que recibi en app.component.html
-  @Input() product: Product; // En invocado en el template
+  @Input() product!: Product; // En invocado en el template
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
   // Objeto tipo Fecha
   today = new Date();

@@ -7,3 +7,4 @@
 <p>La hora es: {{today | date:'HH:MM' }} </p>
 <!--Seccion de SALIDA de datos ! Enviamos datos -->
 <button (click)="addCart()">Añadir al carrito</button>
+<a [routerLink]="['/products', product.id]">Ver_detalle</a>
