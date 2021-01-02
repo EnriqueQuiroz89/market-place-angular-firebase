@@ -15,6 +15,17 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 
+import {
+  SwiperModule,
+  SWIPER_CONFIG,
+  SwiperConfigInterface,
+} from 'ngx-swiper-wrapper';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,14 +38,13 @@ import { BannerComponent } from './banner/banner.component';
     DemoComponent,
     HeaderComponent,
     FooterComponent,
-    BannerComponent
+    BannerComponent,
   ],
-  imports: [
-    FormsModule,
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [FormsModule, BrowserModule, AppRoutingModule, SwiperModule],
+  providers: [{
+    provide: SWIPER_CONFIG,
+    useValue: DEFAULT_SWIPER_CONFIG
+  }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

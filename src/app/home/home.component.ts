@@ -6,9 +6,9 @@ import Swiper from 'swiper';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 
-  mySwiper: Swiper;
+  //mySwiper: Swiper;
 
   constructor() { }
 
@@ -16,13 +16,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
 
-  ngAfterViewInit(): void {
+ /** ngAfterViewInit(): void {
     this.mySwiper= new Swiper('.swiper-container',{navigation:{
       nextEl:'.swiper-button-next',
       prevEl:'.swiper-button-prev'
     }
   });
-
-  }
+  }  */
 
 }
