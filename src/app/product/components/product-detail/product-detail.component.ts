@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 //Agregar routing para filtra el contenido de un solo producto
 import { ActivatedRoute, Params } from '@angular/router'
-import { Product } from '../product.model';
-import { ProductsService } from './../core/services/products/products.service'
+import { Product } from '../../../product.model';
+import { ProductsService } from '../../../core/services/products/products.service'
 
 
 @Component({

@@ -11,7 +11,7 @@ import {
   OnDestroy,
 } from '@angular/core';
 
-import { Product } from './../product.model';
+import { Product } from '../../../product.model';
 
  // Ever last class
 @Component({
