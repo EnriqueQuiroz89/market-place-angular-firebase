@@ -1,6 +1,6 @@
 // Mision de un servicio es proveer de datos
 import { Injectable } from '@angular/core';
-import { Product } from './product.model';
+import { Product } from './../../../product.model';
 
 @Injectable({
   providedIn: 'root',
