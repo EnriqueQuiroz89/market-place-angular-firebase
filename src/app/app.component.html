@@ -1,33 +1,4 @@
-<html lang="es">
-  <!-- Me suscriboo al valor de title en el componente 
-y si el valor cambia en el tiempo yo tambien cambio-->
-  <div>¿Que pasa si escribo hendrydev? {{ title }}</div>
+<router-outlet></router-outlet>
 
-  <!--Lee lo esrito en el box y lo envia al componente-->
-  <input type="text" [(ngModel)]="title" />
 
-  <!--Lee lo esrito en el box y lo envia al componente-->
-  <input type="text" [(ngModel)]="power" /> <!--Es buscado en component-->
-  {{power | exponential}}
 
-  <!--Si true muestra el componente, aqui lo que es dinamico es la condicion-->
-  <div *ngIf="title === 'henrydev'">Has descubierto este miembro</div>
-
-  <!--Condicional mas optimo  que el if-->
-  <div [ngSwitch]="title">
-    <p *ngSwitchCase="'nicolas'">Esto es nicolas</p>
-    <p *ngSwitchCase="'julian'">Esto es julian</p>
-    <p *ngSwitchCase="'pedro'">Esto es pedro</p>
-    <p *ngSwitchDefault>No hay match</p>
-  </div>
-
-  <div class="product-grid">
-    <!--ngFor itera un arreglo y en cada ciclo retorna un objeto Producto-->
-    <!--Mediante [ ] se captura el objeto Producto y se envia al componente -->
-    <app-product
-      *ngFor="let product of products"
-      (productClicked)="clickProduct(product)"
-      [product]="product"
-    ></app-product>
-  </div>
-</html>

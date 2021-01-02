@@ -1,0 +1,30 @@
+  <!-- Me suscriboo al valor de title en el componente 
+y si el valor cambia en el tiempo yo tambien cambio-->
+<div><p>¿Que pasa si escribo hendrydev? {{ title }}</p>
+
+<!--Lee lo esrito en el box y lo envia al componente-->
+<input type="text" [(ngModel)]="title" />
+
+</div>
+
+<div>
+
+  <p>Escribe un numero para calular su potencia al CUadrado </p>
+
+<!--Lee lo esrito en el box y lo envia al componente-->
+<input type="text" [(ngModel)]="power" /> <!--Es buscado en component-->
+{{power | exponential}}
+
+<!--Si true muestra el componente, aqui lo que es dinamico es la condicion-->
+<div *ngIf="title === 'henrydev'">Has descubierto este miembro</div>
+
+
+</div>
+
+<!--Condicional mas optimo  que el if-->
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'nicolas'">Esto es nicolas</p>
+  <p *ngSwitchCase="'julian'">Esto es julian</p>
+  <p *ngSwitchCase="'pedro'">Esto es pedro</p>
+  <p *ngSwitchDefault>No hay match</p>
+</div>
