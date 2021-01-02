@@ -1,27 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from '../product.model';
+// Mision de un servicio es proveer de datos
+import { Injectable } from '@angular/core';
+import { Product } from './product.model';
 
-@Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+@Injectable({
+  providedIn: 'root',
 })
-export class ProductsComponent implements OnInit {
+export class ProductsService {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getAllProducts() {
+    return this.products;
   }
 
-  power  = 10;
-   
-  clickProduct(product: Product): void {
-    console.log('product' + product.title);
-    console.log('id' + product.id);
+  getProduct(id: string){
+    return this.products.find(item=> id ===item.id)
   }
-
-
-    // ngFor para representarlo
+  // ngFor para representarlo
   // Creamos una interfaza para poder tipar los objetos de products[]
   products: Product[] = [
     {
@@ -67,5 +61,4 @@ export class ProductsComponent implements OnInit {
       description: 'tro sticker',
     },
   ];
-  
 }
