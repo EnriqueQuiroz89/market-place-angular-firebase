@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { ContactComponent } from './contact/contact.component';
-import { DemoComponent } from './demo/demo.component';
+import { DemoComponent } from './demo/components/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { LayoutComponent } from './layout/layout.component';
 // Quiero proteger la ruta de contacts con un Guardian
-import { AdminGuard } from './admin.guard'
+import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
   {
@@ -38,7 +38,7 @@ const routes: Routes = [
   },
   {
     path: 'demo',
-    component: DemoComponent,
+    loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule),
   },
   {
     path: '**',
