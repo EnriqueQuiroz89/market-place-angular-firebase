@@ -4,13 +4,12 @@ import { BannerComponent } from './components/banner/banner.component';
 import { HomeComponent } from './components/home/home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from './../shared/shared.module';
-
-
 import {
   SwiperModule,
   SWIPER_CONFIG,
   SwiperConfigInterface,
 } from 'ngx-swiper-wrapper';
+
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
