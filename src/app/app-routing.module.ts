@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './contact/components/contact.component';
 import { DemoComponent } from './demo/components/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { LayoutComponent } from './layout/layout.component';
 // Quiero proteger la ruta de contacts con un Guardian
-import { AdminGuard } from './admin.guard';
+import { AdminGuard } from './core/guardians/admin.guard';
 
 const routes: Routes = [
   {
@@ -31,8 +31,8 @@ const routes: Routes = [
       },
       {
         path: 'contact',
-        canActivate: [AdminGuard], // Con esto control si entra a una ruta
-        component: ContactComponent,
+        loadChildren: () =>
+          import('./contact/contact.module').then((m) => m.ContactModule),
       },
     ],
   },
@@ -48,9 +48,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
-      preloadingStrategy: PreloadAllModules,
-    }),
+    RouterModule.forRoot(routes,
+      // { preloadingStrategy: PreloadAllModules,}
+       ),
   ],
   exports: [RouterModule],
 })
