@@ -10,8 +10,8 @@ import {
   DoCheck,
   OnDestroy,
 } from '@angular/core';
+import { Product } from 'src/app/core/models/product.model';
 
-import { Product } from '../../../product.model';
 
  // Ever last class
 @Component({

@@ -30,15 +30,6 @@ const routes: Routes = [
           import('./product/product.module').then((m) => m.ProductModule),
       },
       {
-        path: 'products1',
-        canActivate: [AdminGuard],
-        component: ProductsComponent,
-      },
-      {
-        path: 'products/:id',
-        component: ProductDetailComponent,
-      },
-      {
         path: 'contact',
         canActivate: [AdminGuard], // Con esto control si entra a una ruta
         component: ContactComponent,
