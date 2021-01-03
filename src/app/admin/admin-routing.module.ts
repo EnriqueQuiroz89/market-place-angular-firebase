@@ -3,23 +3,28 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
 
 const routes: Routes = [
   {
     path: '',
     component: NavComponent,
     children: [
-      {    // A create se accede desde root de admin
+      {
         path: 'create',
         component: ProductFormComponent,
       },
-      {    // A create se accede desde root de admin
+      {
         path: 'table',
         component: DashboardComponent,
       },
-      {    // A create se accede desde root de admin
+      {
         path: 'dashboard',
         component: DashboardComponent,
+      },
+      {
+        path: 'products',
+        component: ProductsListComponent,
       },
     ],
   },
