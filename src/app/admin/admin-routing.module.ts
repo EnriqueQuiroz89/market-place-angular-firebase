@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { TableComponent } from './components/table/table.component';
 
 const routes: Routes = [
   {
@@ -11,6 +13,14 @@ const routes: Routes = [
       {    // A create se accede desde root de admin
         path: 'create',
         component: ProductFormComponent,
+      },
+      {    // A create se accede desde root de admin
+        path: 'table',
+        component: TableComponent,
+      },
+      {    // A create se accede desde root de admin
+        path: 'dashboard',
+        component: DashboardComponent,
       },
     ],
   },
