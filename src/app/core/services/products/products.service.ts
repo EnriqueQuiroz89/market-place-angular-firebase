@@ -20,7 +20,7 @@ export class ProductsService {
   }
 
   getProduct(id: string){
-    return this.httpClient.get<Product[]>(`${URL_WS}/${id}`)
+    return this.httpClient.get<Product>(`${URL_WS}/${id}`)
   }
   // ngFor para representarlo
   // Creamos una interfaza para poder tipar los objetos de products[]

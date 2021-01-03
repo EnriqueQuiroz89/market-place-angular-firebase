@@ -1,11 +1,12 @@
-<div>
-
-    <img [src]="product.image" alt="">
-</div>
-
-<div>
-<ul><li>Nombre: {{product.title}} </li>
-    <li>Precio: {{product.price }}</li>
-</ul>
-<p>{{product.description}}</p>
+<div *ngIf="product">  <!--Aqui le decimos que no renderice hasta que tenga algo-->>
+  <div>
+    <img [src]="product.image" alt="" class="crop-image" />
+  </div>
+  <div>
+    <ul>
+      <li>Nombre: {{ product.title }}</li>
+      <li>Precio: {{ product.price }}</li>
+    </ul>
+    <p>{{ product.description }}</p>
+  </div>
 </div>
