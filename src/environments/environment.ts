@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL_WS: 'https://platzi-store.herokuapp.com/products' 
+  URL_WS: 'https://platzi-store.herokuapp.com' 
 
 };
 

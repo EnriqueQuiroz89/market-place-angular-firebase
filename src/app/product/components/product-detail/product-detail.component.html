@@ -1,4 +1,5 @@
-<div *ngIf="product">  <!--Aqui le decimos que no renderice hasta que tenga algo-->>
+<div *ngIf="product">
+  <!--Aqui le decimos que no renderice hasta que tenga algo-->>
   <div>
     <img [src]="product.image" alt="" class="crop-image" />
   </div>
@@ -9,4 +10,6 @@
     </ul>
     <p>{{ product.description }}</p>
   </div>
+
+  <button (click)="createProduct()">Nuevo Producto</button>
 </div>

@@ -4,26 +4,30 @@ import { Product } from '../../models/product.model';
 // El modulo ya lo tenemos en app.mode
 import { HttpClient } from '@angular/common/http';
 // Importo variable de ambiente de la URL
-import { environment } from './../../../../environments/environment'
+import { environment } from './../../../../environments/environment';
 
-const URL_WS: string = environment.URL_WS
+const URL_WS: string = environment.URL_WS;
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-
-  
   //Inyecto la dependencia
   constructor(private httpClient: HttpClient) {}
 
-  getAllProducts() {      //Le indicamos que objeto esperamos
-    return this.httpClient.get<Product[]>(URL_WS);
+  getAllProducts() {
+    //Le indicamos que objeto esperamos
+    return this.httpClient.get<Product[]>(`${URL_WS}/products`);
   }
 
-  getProduct(id: string){
-    return this.httpClient.get<Product>(`${URL_WS}/${id}`)
+  getProduct(id: string) {
+    return this.httpClient.get<Product>(`${URL_WS}/products/${id}`);
   }
-  // ngFor para representarlo
-  // Creamos una interfaza para poder tipar los objetos de products[]
- }
+
+  // Uso del metodo POST para crear un nuveo Item
+  createProduct(product: Product) {
+    return this.httpClient
+      .post(`${URL_WS}/products/`, product)
+      .subscribe((product) => console.log(product));
+  }
+}

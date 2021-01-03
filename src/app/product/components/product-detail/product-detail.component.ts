@@ -32,4 +32,23 @@ export class ProductDetailComponent implements OnInit {
       this.product = product;
     });
   }
+
+  createProduct(){
+    const newProduct: Product={
+      id: '',
+      title: 'Desde Angular',
+      image: 'https://cdn.pixabay.com/photo/2018/06/12/19/42/football-3471307_960_720.jpg',
+      price: 765298,
+      description: `
+      Tipo de imagen	JPG
+      Resolución	4977×2931
+      Creado	29 de Mayo de 2018
+      Published	13 de Junio de 2018
+      Categoría	Deportes
+      Vistas	11083
+      Descargas	6378`
+    };
+    this.productsService.createProduct(newProduct)
+
+  }
 }
