@@ -3,8 +3,10 @@ import { Injectable } from '@angular/core';
 import { Product } from '../../models/product.model';
 // El modulo ya lo tenemos en app.mode
 import { HttpClient } from '@angular/common/http';
+// Importo variable de ambiente de la URL
+import { environment } from './../../../../environments/environment'
 
-const URL_WS: string = 'https://platzi-store.herokuapp.com/products' 
+const URL_WS: string = environment.URL_WS
 
 @Injectable({
   providedIn: 'root',
