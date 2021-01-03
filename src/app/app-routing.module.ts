@@ -38,7 +38,13 @@ const routes: Routes = [
   },
   {
     path: 'demo',
-    loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule),
+   //loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule),
+   redirectTo: '/home', 
+   pathMatch: 'full',
+  },
+   {
+    path: 'admin',  //admin va a cargar en modo Lazing
+    loadChildren:() => import ('./admin/admin.module').then(m => m.AdminModule)
   },
   {
     path: '**',

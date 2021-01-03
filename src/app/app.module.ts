@@ -15,11 +15,12 @@ import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
+//Lazi loading significa que ya no se agregan aqui
 
 @NgModule({
   declarations: [
     AppComponent,
-  //  DemoComponent,
+ 
     PageNotFoundComponent,
     LayoutComponent,
   ],
@@ -30,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     CoreModule,
     BrowserAnimationsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

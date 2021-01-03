@@ -17,4 +17,4 @@ import { DemoRoutingModule } from './demo-routing.module';
     DemoRoutingModule
   ]
 })
-export class DemoModule { }
+class DemoModule { }
