@@ -1,11 +1,25 @@
-<!--Seccion de ENTRADA de datos-->
-<h3 appHighlight>{{ product.title |lowercase }}</h3>
-<strong>{{ product.price | currency }}</strong>
-<img [src]="product.image" alt="" />
+<mat-card>
+  <mat-card-header>
+    <!--Seccion de ENTRADA de datos-->
+    <mat-card-title>{{ product.title | uppercase }}</mat-card-title>
+    <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
+  </mat-card-header>
 
-<p>{{ product.description | slice:0:8 }}</p>
-<p>La hora es: {{today | date:'HH:MM' }} </p>
-<!--Seccion de SALIDA de datos ! Enviamos datos -->
-<button (click)="addCart()" mat-raised-button color="basic">
-    Añadir al carrito</button>
-<a [routerLink]="['/products', product.id]">Ver_detalle</a>
+<div class="crop-image">
+  <img [src]="product.image" alt="">
+</div>
+
+  <mat-card-content>
+    <p>{{ product.description | slice: 0:8 }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <a mat-raised-button [routerLink]="['/products', product.id]"
+      >Ver_detalle</a>
+
+    <button (click)="addCart()" mat-raised-button color="primary">
+      Añadir al carrito
+    </button>
+  </mat-card-actions>
+
+</mat-card>
