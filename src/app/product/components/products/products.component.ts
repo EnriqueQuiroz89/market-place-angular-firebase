@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/core/models/product.model';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -18,7 +17,10 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     // Ejecuta al iniciar
-    this.products = this.productsService.getAllProducts();
+   // this.products = this.productsService.getAllProducts();
+
+   this.fetchProducts()
+
   }
 
   power = 10;
@@ -26,5 +28,13 @@ export class ProductsComponent implements OnInit {
   clickProduct(product: Product): void {
     console.log('product' + product.title);
     console.log('id' + product.id);
+  }
+
+  fetchProducts() {
+    this.productsService
+        .getAllProducts()
+        .subscribe( 
+        productsWebService =>  this.products= productsWebService
+                )
   }
 }
