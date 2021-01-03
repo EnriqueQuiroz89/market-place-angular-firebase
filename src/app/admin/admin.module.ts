@@ -23,7 +23,7 @@ import { MatMenuModule } from '@angular/material/menu'
 
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, TableComponent, DashboardComponent],
+  declarations: [ProductFormComponent, NavComponent, DashboardComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

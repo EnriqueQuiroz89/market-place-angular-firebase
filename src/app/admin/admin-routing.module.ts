@@ -16,7 +16,7 @@ const routes: Routes = [
       },
       {    // A create se accede desde root de admin
         path: 'table',
-        component: TableComponent,
+        component: DashboardComponent,
       },
       {    // A create se accede desde root de admin
         path: 'dashboard',

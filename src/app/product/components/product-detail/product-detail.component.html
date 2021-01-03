@@ -1,5 +1,5 @@
 <div *ngIf="product">
-  <!--Aqui le decimos que no renderice hasta que tenga algo-->>
+  <!--Aqui le decimos que no renderice hasta que tenga algo-->
   <div>
     <img [src]="product.image" alt="" class="crop-image" />
   </div>
@@ -12,4 +12,6 @@
   </div>
 
   <button (click)="createProduct()">Nuevo Producto</button>
+  <button (click)="updateProduct()">Update Producto</button>
+  <button (click)="deleteProduct()">Delete Producto</button>
 </div>

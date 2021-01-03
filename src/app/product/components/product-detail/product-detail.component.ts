@@ -33,11 +33,12 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  createProduct(){
-    const newProduct: Product={
+  createProduct() {
+    const newProduct: Product = {
       id: '',
       title: 'Desde Angular',
-      image: 'https://cdn.pixabay.com/photo/2018/06/12/19/42/football-3471307_960_720.jpg',
+      image:
+        'https://cdn.pixabay.com/photo/2018/06/12/19/42/football-3471307_960_720.jpg',
       price: 765298,
       description: `
       Tipo de imagen	JPG
@@ -46,9 +47,25 @@ export class ProductDetailComponent implements OnInit {
       Published	13 de Junio de 2018
       Categoría	Deportes
       Vistas	11083
-      Descargas	6378`
+      Descargas	6378`,
     };
-    this.productsService.createProduct(newProduct)
+    this.productsService.createProduct(newProduct);
+  }
 
+  updateProduct() {
+    const updateProduct: Partial<Product> = {
+      title: 'Modificacion',
+      description: `Tipo de imagen	JPG`,
+    };
+
+    this.productsService
+      .updateProduct('1', updateProduct)
+      .subscribe((product) => console.log(product));
+  }
+
+  deleteProduct() {
+    this.productsService
+      .deleteProduct('1')
+      .subscribe((product) => console.log(product));
   }
 }

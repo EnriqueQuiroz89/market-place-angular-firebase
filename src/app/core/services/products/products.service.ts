@@ -27,7 +27,16 @@ export class ProductsService {
   // Uso del metodo POST para crear un nuveo Item
   createProduct(product: Product) {
     return this.httpClient
-      .post(`${URL_WS}/products/`, product)
-      .subscribe((product) => console.log(product));
+      .post(`${URL_WS}/products/`, product);
   }
+  //Requiero id y el cuerpo json
+  updateProduct(id: string, changes: Partial<Product>){
+   return this.httpClient
+               .put(`${URL_WS}/products/${id}`,changes);
+  }
+
+  deleteProduct(id: string ){
+    return this.httpClient.delete(`${URL_WS}/products/${id}`);
+  }
+
 }
