@@ -10,10 +10,10 @@ import { TableDataSource, TableItem } from './table-datasource';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements AfterViewInit, OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<TableItem>;
-  dataSource: TableDataSource;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatTable) table!: MatTable<TableItem>;
+  dataSource!: TableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name'];

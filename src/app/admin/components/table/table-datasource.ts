@@ -41,8 +41,8 @@ const EXAMPLE_DATA: TableItem[] = [
  */
 export class TableDataSource extends DataSource<TableItem> {
   data: TableItem[] = EXAMPLE_DATA;
-  paginator: MatPaginator;
-  sort: MatSort;
+  paginator!: MatPaginator;
+  sort!: MatSort;
 
   constructor() {
     super();
