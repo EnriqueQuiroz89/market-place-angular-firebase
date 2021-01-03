@@ -1,14 +1,56 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Productos</h3>
+          <ul>
+            <li>
+              <a routerLink="/products" [queryParams]="{ type: 'news' }"
+                >Nuevos Productos</a
+              >
+            </li>
+            <li>
+              <a routerLink="/products" [queryParams]="{ type: 'offer' }"
+                >En oferta</a
+              >
+            </li>
+            <li>
+              <a routerLink="/products" [queryParams]="{ type: 'latest' }"
+                >Últimos productos</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Acerca de PlatziStore</h3>
+          <ul>
+            <li><a routerLink="/about-us">Sobre nosotros</a></li>
+            <li><a routerLink="/stores">Nuestras tiendas</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Contacto</h3>
+          <mat-form-field>
+            <input class="textfield-footer"  matInput placeholder="Escribe tu correo" [formControl]="emailField" type="email" />
+          </mat-form-field>
+        <button 
+            mat-raised-button
+            [disabled]="emailField.invalid"
+            (click)="sendMail()">
+            enviar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    <mat-toolbar color="primary" class="footer-row">
-      <button mat-icon-button  aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar>
+
+<!--button *ngIf="emailField.valid" >Hola Valido</button-->
+
+   

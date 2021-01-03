@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 //Importar Material Module por que header los utiliza
 import { MaterialModule } from './../material/material.module'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MaterialModule } from './../material/material.module'
     HighlightDirective,
     HeaderComponent,
     FooterComponent,
+ 
   ],
-  imports: [CommonModule, RouterModule, MaterialModule],
+  imports: [CommonModule, RouterModule, MaterialModule, ReactiveFormsModule],
 })
 export class SharedModule {}

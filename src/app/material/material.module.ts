@@ -8,6 +8,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
@@ -21,7 +22,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -43,7 +43,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatGridListModule,
     MatMenuModule,
     LayoutModule,
-    ReactiveFormsModule,
+    MatFormFieldModule,
   ],
   exports: [
     MatButtonModule,
@@ -62,7 +62,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatGridListModule,
     MatMenuModule,
     LayoutModule,
-    ReactiveFormsModule,
+    MatFormFieldModule,
   ],
 })
 export class MaterialModule {}
