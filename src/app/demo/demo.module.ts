@@ -6,6 +6,7 @@ import { DemoComponent } from './components/demo.component';
 // POr que van en Importaciones?
 import { SharedModule } from './../shared/shared.module';
 import { DemoRoutingModule } from './demo-routing.module';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DemoRoutingModule } from './demo-routing.module';
   imports: [
     CommonModule,
     SharedModule,
-    DemoRoutingModule
+    DemoRoutingModule,
+    FormsModule
   ]
 })
 class DemoModule { }
