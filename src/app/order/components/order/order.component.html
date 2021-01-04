@@ -1,15 +1,18 @@
 <mat-horizontal-stepper>
   <mat-step>
     <ng-template matStepLabel>Sus Productos</ng-template>
-
-    <div *ngIf="(products$ | async).length === 0">
-      No hay productos en tu carrito
+    <div *ngIf="products$ | async as productos">
+      <p *ngIf="productos.length === 0">No hay productos en tu carrito</p>
+      <ul class="flex-container" >
+        <li *ngFor="let product of productos" class="flex-item">
+          <section>
+              <div><img  [src]="product.image" alt=""  class='form_photo'/></div>
+              <div><p>{{ product.title }}</p> </div>
+              <div><p>{{ product.price }}</p> </div>
+            </section>
+        </li>
+      </ul>
     </div>
-    <ul>
-      <li *ngFor="let product of products$ | async">
-        {{ product.title }}
-      </li>
-    </ul>
   </mat-step>
 
   <mat-step>
