@@ -13,7 +13,15 @@ export class AuthService {
 createUser(email: string, password: string){
   //retrona una promesa
  return this.angularFireAuth.createUserWithEmailAndPassword(email,password);
-// this.angularFireAuth.createUserWithEmailAndPassword
+}
+
+login(email: string, password: string ){
+
+ return this.angularFireAuth.signInWithEmailAndPassword(email, password);
+}
+
+logout(){
+return this.angularFireAuth.signOut();
 
 }
 
