@@ -10,6 +10,11 @@
           >Contacto</a
         >
       </nav>
+      
+      <!--Con esto dinamicamente vamos al inicio de sesion-->
+            <a mat-raised-button routerLink="/auth/login">Login
+      <mat-icon>person</mat-icon></a>
+
       <!--Con esto dinamicamente va ir cambiando el carrito-->
       <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn">
         <mat-icon>shopping_cart</mat-icon> Carrito

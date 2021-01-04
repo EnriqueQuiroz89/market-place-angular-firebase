@@ -48,6 +48,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
   },
+  {
+    path: 'auth', //admin va a cargar en modo Lazing
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  
     {
     path: '**',
     component: PageNotFoundComponent,
