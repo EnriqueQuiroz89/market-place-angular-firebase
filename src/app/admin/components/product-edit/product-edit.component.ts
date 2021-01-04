@@ -10,8 +10,7 @@ import { myValidators } from '../../../utils/validators';
   styleUrls: ['./product-edit.component.scss'],
 })
 export class ProductEditComponent implements OnInit {
-  
-  id!:string; // para hacer global el id traido del activatedRoute
+  id!: string; // para hacer global el id traido del activatedRoute
   form!: FormGroup;
 
   constructor(
@@ -32,15 +31,17 @@ export class ProductEditComponent implements OnInit {
           this.form.patchValue(product); // Sendo Object to Formulario
         });
     });
-  };
+  }
 
   saveProduct(event: Event) {
     event.preventDefault(); //Quita la accion por defecto, que es recargar la pagina
     if (this.form.valid) {
       // Si el formulario es valido
       const product = this.form.value; //El form genera un Json Valido Y se asigna a product
-      this.productsService.updateProduct(this.id,product) 
-        .subscribe((updatedProduct) => {     // me suscribo a la respuesta
+      this.productsService
+        .updateProduct(this.id, product)
+        .subscribe((updatedProduct) => {
+          // me suscribo a la respuesta
           console.log(updatedProduct); // imprimo la respuesta
           this.router.navigate(['./admin/products']);
         });
@@ -49,7 +50,7 @@ export class ProductEditComponent implements OnInit {
 
   private buildForm() {
     this.form = this.formBuilder.group({
-    //  id: ['', [Validators.required]], No quiero editar el id
+      //  id: ['', [Validators.required]], No quiero editar el id
       title: ['', [Validators.required]],
       price: ['', [Validators.required, myValidators.isPriceValid]],
       image: [''],

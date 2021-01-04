@@ -45,7 +45,7 @@ export class FormProductComponent implements OnInit {
 
   private buildForm() {
     this.form = this.formBuilder.group({
-      id: ['', [Validators.required]],
+      id: ['', [Validators.required, Validators.minLength(10)]],
       title: ['', [Validators.required]],
       price: ['', [Validators.required]],
       image: ['', [Validators.required]],
@@ -63,7 +63,8 @@ export class FormProductComponent implements OnInit {
     const target = event.target as HTMLInputElement;
     const file: File = (target.files as FileList)[0];
 
-    const nameImage = file.name; 
+    const nameImage = file.name;
+
     const fileRef = this.storage.ref(nameImage);
     //Observ que le da un no,bre y un archivo que subir
     const task = this.storage.upload(nameImage, file);
@@ -72,9 +73,9 @@ export class FormProductComponent implements OnInit {
       .snapshotChanges()
       .pipe(
         finalize(() => {
-         this.image$ = fileRef.getDownloadURL();
+          this.image$ = fileRef.getDownloadURL();
           this.image$.subscribe((url) => {
-             console.log(url); 
+            console.log(url);
             this.form.get('image')?.setValue(url);
           });
         })
