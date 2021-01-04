@@ -11,5 +11,6 @@ export class myValidators {
     if (value > 10000) {
       return { price_valid: true };
     } 
+    return null;
   }
 }

@@ -11,9 +11,9 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { Product } from 'src/app/core/models/product.model';
+import { CartService } from '../../../core/services/cart.service';
 
-
- // Ever last class
+// Ever last class
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -27,7 +27,7 @@ export class ProductComponent implements DoCheck, OnInit, OnDestroy {
   // Objeto tipo Fecha
   today = new Date();
 
-  constructor() {
+  constructor(private cartService: CartService) {
     console.log('1.constructor'); // Me deja ver cuantas veces se crearo objetos
   }
 
@@ -52,7 +52,7 @@ export class ProductComponent implements DoCheck, OnInit, OnDestroy {
   }
 
   addCart(): void {
-    console.log('3.Añadido al carrito');
-   this.productClicked.emit(this.product.id);
+    console.log('add to cart')
+    this.cartService.addCart(this.product);
   }
 }

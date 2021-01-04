@@ -1,48 +1,58 @@
 <form [formGroup]="form" (ngSubmit)="saveProduct($event)">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Producto</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="row">
-          <div class="col-xs">
-            <mat-form-field>
-              <!--Enlazar los controladores con los elementos con el html-->
-              <input placeholder="id" formControlName="id" matInput type="text">
-            </mat-form-field>
-          </div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Producto</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <!--Enlazar los controladores con los elementos con el html-->
+            <input placeholder="id" formControlName="id" matInput type="text" />
+          </mat-form-field>
         </div>
-        <div class="row">
-          <div class="col-xs">
-            <mat-form-field>
-              <input placeholder="Titulo articulo" formControlName="title" matInput type="text">
-            </mat-form-field>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input
+              placeholder="Titulo articulo"
+              formControlName="title"
+              matInput
+              type="text"
+            />
+          </mat-form-field>
         </div>
-        <div class="row">
-          <div class="col-xs">
-            <mat-form-field>
-              <input placeholder="Precio" formControlName="price" matInput type="number">
-            </mat-form-field>
-            <div *ngIf="priceField.errors && priceField.dirty" >     
-               <p *ngIf="priceField.hasError('price_invalid')">No debes Superar los 10,000</p>
-               <p *ngIf="priceField.hasError('required')">El campo es requerido</p>
-            </div>
-            </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input
+              placeholder="Precio"
+              formControlName="price"
+              matInput
+              type="number"
+            />
+          </mat-form-field>
         </div>
-               <div class="row">
-          <div class="col-xs">
-            <mat-form-field>
-              <textarea placeholder="Decripcion" formControlName="description" matInput></textarea>
-            </mat-form-field>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <textarea
+              placeholder="Decripcion"
+              formControlName="description"
+              matInput
+            ></textarea>
+          </mat-form-field>
         </div>
-      </mat-card-content>
-      <mat-card-actions>
-        <!--Si el formulario es invalido por cualquier campo -->
-        <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
-      </mat-card-actions>
-    </mat-card>
-    
-  </form>
-  
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <!--Si el formulario es invalido por cualquier campo -->
+      <button [disabled]="form.invalid" mat-raised-button type="submit">
+        Guardar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>
