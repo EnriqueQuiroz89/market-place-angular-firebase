@@ -45,6 +45,7 @@ const routes: Routes = [
   },
   {
     path: 'admin', //admin va a cargar en modo Lazing
+    canActivate: [AdminGuard],
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
   },

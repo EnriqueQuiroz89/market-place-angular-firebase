@@ -25,6 +25,12 @@ return this.angularFireAuth.signOut();
 
 }
 
+hasUser(){
+  //retornar el observable y dejar que lo procese quien lo invoque
+   return this.angularFireAuth.authState;
+
+}
+
 }
 
 
