@@ -50,12 +50,20 @@
 
       <div class="row">
         <div class="col-xs">
-          <img
-            *ngIf="image$ | async as imagenEnFb"
-            [src]="imagenEnFb"
-            formControlName="image"
-            alt=""
-          />
+          <mat-form-field>
+            <textarea
+              placeholder="URL_imagen"
+              formControlName="image"
+              matInput
+              readonly
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <img *ngIf="image$ | async as imagenEnFb" [src]="imagenEnFb" alt="" />
           <input type="file" (change)="uploadFile($event)" />
         </div>
       </div>

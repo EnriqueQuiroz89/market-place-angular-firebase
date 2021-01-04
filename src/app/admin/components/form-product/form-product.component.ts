@@ -48,7 +48,7 @@ export class FormProductComponent implements OnInit {
       id: ['', [Validators.required]],
       title: ['', [Validators.required]],
       price: ['', [Validators.required]],
-      image: [''],
+      image: ['', [Validators.required]],
       description: ['', [Validators.required]],
     });
   }
@@ -63,10 +63,7 @@ export class FormProductComponent implements OnInit {
     const target = event.target as HTMLInputElement;
     const file: File = (target.files as FileList)[0];
 
-    const nameImage = file.name;
-    // directorioen Firebase
-    // const dir = 'images';
-    // Referencia de la carpeta
+    const nameImage = file.name; 
     const fileRef = this.storage.ref(nameImage);
     //Observ que le da un no,bre y un archivo que subir
     const task = this.storage.upload(nameImage, file);
