@@ -47,6 +47,18 @@
           </mat-form-field>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <img
+            *ngIf="image$ | async as imagenEnFb"
+            [src]="imagenEnFb"
+            formControlName="image"
+            alt=""
+          />
+          <input type="file" (change)="uploadFile($event)" />
+        </div>
+      </div>
     </mat-card-content>
     <mat-card-actions>
       <!--Si el formulario es invalido por cualquier campo -->

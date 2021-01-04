@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 // Usar un pipe para determinar que hacer con la respuesta del Observable de AuthService
 import { map, tap } from   'rxjs/operators'; 
-import { FixedSizeVirtualScrollStrategy } from '@angular/cdk/scrolling';
 
 @Injectable({
   providedIn: 'root'
