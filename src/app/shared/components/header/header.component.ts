@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../core/services/cart.service';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,13 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  total = 0;
+  total$: Observable<number>;
 
   constructor(private cartService: CartService) {
-    // requiero escuchar los cambios en el carrito
-    this.cartService.cart$
-      .pipe(map((products) => products.length))
-      .subscribe((total) => (this.total = total));
+    // No es una suscripcion
+    this.total$ = this.cartService.cart$.pipe(
+      map((products) => products.length)
+    );
   }
 
   // Con un pipe puedo monitorear cualquier flujo de datos

@@ -11,7 +11,7 @@
         >
       </nav>
       <!--Con esto dinamicamente va ir cambiando el carrito-->
-      <a mat-raised-button [matBadge]="total" matBadgeColor="warn">
+      <a mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn">
         <mat-icon>shopping_cart</mat-icon> Carrito
       </a>
     </div>
