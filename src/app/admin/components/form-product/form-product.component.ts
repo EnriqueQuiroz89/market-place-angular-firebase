@@ -54,18 +54,6 @@ export class FormProductComponent implements OnInit {
     return this.form.get('price');
   }
 
-  get priceFieldErrorsAndDirty(){
-   return this.form.get('price')?.errors && this.form.get('price')?.d ;
-  }
-
-  get priceFieldInvalid() {  
-    return this.form.get('price')?.hasError('price_invalid');
-  }
-
-  get priceFieldRequired() {  
-    return this.form.get('price')?.hasError('required');
-  }
-
 
 
 }
