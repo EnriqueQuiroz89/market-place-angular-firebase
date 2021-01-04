@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductsService } from './../../../core/services/products/products.service';
+import { myValidators }   from '../../../utils/validators'
+
 
 @Component({
   selector: 'app-form-product',
@@ -17,7 +19,8 @@ export class FormProductComponent implements OnInit {
     private productsService: ProductsService,
     private router: Router
   ) {
-    this.buildForm();
+
+       this.buildForm();
   }
 
   ngOnInit() {
@@ -40,14 +43,29 @@ export class FormProductComponent implements OnInit {
     this.form = this.formBuilder.group({
       id: ['', [Validators.required]],
       title: ['', [Validators.required]],
-      price: ['', [Validators.required]],
+      price: ['', [Validators.required, myValidators.isPriceValid]],
       image: [''],
       description: ['', [Validators.required]],
     });
   }
 
-  get priceField() {
+  // No repite muchas veces
+  get priceField() {  
     return this.form.get('price');
   }
+
+  get priceFieldErrorsAndDirty(){
+   return this.form.get('price')?.errors && this.form.get('price')?.d ;
+  }
+
+  get priceFieldInvalid() {  
+    return this.form.get('price')?.hasError('price_invalid');
+  }
+
+  get priceFieldRequired() {  
+    return this.form.get('price')?.hasError('required');
+  }
+
+
 
 }
