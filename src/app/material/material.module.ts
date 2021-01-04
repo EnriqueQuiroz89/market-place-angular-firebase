@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // SOlo jale para botones
+import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,19 +10,16 @@ import { MatCardModule } from '@angular/material/card';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { MatTableModule } from '@angular/material/table';
-
+import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-
+import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { LayoutModule } from '@angular/cdk/layout';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [],
@@ -33,16 +31,16 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatBadgeModule,
     MatCardModule,
     MatInputModule,
-    MatRadioModule,
     MatSelectModule,
+    MatRadioModule,
     MatTableModule,
     MatSidenavModule,
     MatListModule,
-    MatPaginatorModule,
-    MatSortModule,
     MatGridListModule,
     MatMenuModule,
+    MatSortModule,
     LayoutModule,
+    MatPaginatorModule,
     MatFormFieldModule,
   ],
   exports: [
@@ -57,11 +55,11 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatTableModule,
     MatSidenavModule,
     MatListModule,
-    MatPaginatorModule,
     MatSortModule,
     MatGridListModule,
     MatMenuModule,
     LayoutModule,
+    MatPaginatorModule,
     MatFormFieldModule,
   ],
 })

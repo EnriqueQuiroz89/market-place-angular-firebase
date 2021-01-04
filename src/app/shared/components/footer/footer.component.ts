@@ -11,7 +11,7 @@ export class FooterComponent implements OnInit {
   public emailField: FormControl;
 
   constructor() {
-    this.emailField = new FormControl('', [
+    this.emailField = new FormControl('', [        //Estado inicial, Array de validaciones
       Validators.required,
       Validators.email,
     ]);
@@ -24,7 +24,7 @@ export class FooterComponent implements OnInit {
 
   sendMail() {
     if (this.emailField.valid) {
-      console.log(this.emailField.valid);
+      console.log(this.emailField.valid); 
     }
   }
 }

@@ -36,9 +36,15 @@
         <div class="box">
           <h3>Contacto</h3>
           <mat-form-field>
-            <input class="textfield-footer"  matInput placeholder="Escribe tu correo" [formControl]="emailField" type="email" />
+            <input
+              class="textfield-footer"
+              matInput
+              placeholder="Escribe tu correo"
+              [formControl]="emailField"
+              type="email"
+            />
           </mat-form-field>
-        <button 
+          <button
             mat-raised-button
             [disabled]="emailField.invalid"
             (click)="sendMail()">
@@ -50,7 +56,6 @@
   </div>
 </footer>
 
-
+<!--Este metodo ocula o mustra el voton si *ngIf es True-->
 <!--button *ngIf="emailField.valid" >Hola Valido</button-->
-
-   
+<!--p *ngIf="emailField.invalid" >El correo no es valido</p-->
